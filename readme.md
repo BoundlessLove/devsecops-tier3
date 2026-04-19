@@ -34,6 +34,17 @@ kubectl port-forward svc/aks-demo-service 8080:8080
 
 ![Working AKS Screenshot](./screenshots/OperationalAzureProof.jpg)
 
+## The Security Part of DEVSECOPS
+International Business Machines (IBM) has a plugin offering called SYNC in Eclipse, whose service can be availed freely by software engineers in Eclipse. It is a package download from Eclipse Marketplace. This software plugin in Eclipse scans through the code looking for vulnerable packages and such, and then lists them all with the exact issue as errors in the problems tab. The idea is for the user to be able to remediate it: 
+![IBM SYNC DevSecOps Security Screenshot](./screenshots/SyncDoingSecurity.jpg)
+
+API Endpoint for availing it is : 
+
+- https://api.synk.io
+
+
 # NEXT STEPS
+
 a. Move to https
+
 b. BICES Automation of infrastructure
