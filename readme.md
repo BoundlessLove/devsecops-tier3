@@ -1,3 +1,4 @@
+$${\color{red} © \space 2026 \space Jyotirmay \space Sarna. \space This \space work \space is \space original. \space Do \space not \space copy, \space repost, \space or \space use \space without \space permission. }$$
 
 # AIM 
 DEVSECOPS Demonstration to align with US Department of Defence (US DOD) definition (US DOD, 2023).
@@ -128,3 +129,7 @@ kubectl port-forward svc/aks-demo-service 8080:8080
 # J. REFERENCES
 
 1. United States (US) Government's Department of Defence (DOD).(2023). DOCS Mission - Guidelines for partners to maintain complaince. Source: https://public.cyber.mil/devsecops/. Last Accessed: 20 April 2026
+
+$${\color{red} © \space 2026 \space Jyotirmay \space Sarna. \space This \space work \space is \space original. \space Do \space not \space copy, \space repost, \space or \space use \space without \space permission. }$$
+
+
