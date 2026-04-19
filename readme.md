@@ -22,3 +22,6 @@ kubectl port-forward svc/aks-demo-service 8080:8080
 
 ## Version 0.2
 19 April 2026 19:37 - Pre-req is creating an Azure Container Registry (ACR) and an Azure Kubernetes Cluster (containing the ACR). First attempt at CICD AKS. 
+
+## Version 0.3
+19 April - Setup Helm

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "aks-demo.fullname" . }}
+  labels:
+    app: {{ include "aks-demo.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "aks-demo.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "aks-demo.name" . }}
+    spec:
+      containers:
+        - name: aks-demo
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+

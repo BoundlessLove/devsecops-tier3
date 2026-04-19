@@ -48,20 +48,12 @@ jobs:
         resource-group: ${{ env.RESOURCE_GROUP }}
         cluster-name: ${{ env.AKS_NAME }}
 
-    - name: Install kubectl
-      uses: azure/setup-kubectl@v4
 
-    # -----------------------------
-    # 3. Deploy Kubernetes Manifests
-    # -----------------------------
-    - name: Update deployment image
+    - name: Install Helm
+      uses: azure/setup-helm@v3
+
+    - name: Deploy with Helm
       run: |
-        IMAGE=$ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
-        sed -i "s#image: .*#image: ${IMAGE}#g" k8s/deployment.aks.yaml
-
-    - name: Deploy to AKS
-      uses: azure/k8s-deploy@v5
-      with:
-        manifests: |
-          k8s/deployment.aks.yaml
-          k8s/service.aks.yaml 
+        helm upgrade --install aks-demo ./helm/aks-demo \
+          --set image.repository=${ACR_NAME}.azurecr.io/aks-demo \
+          --set image.tag=${IMAGE_TAG}
