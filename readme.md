@@ -25,15 +25,15 @@ kubectl port-forward svc/aks-demo-service 8080:8080
 
 # Version 0.3
 19 April - Setup Helm on local machine Docker Desktop k38 and on Azure Kubernetes Cluster
-##Local PC Kubernetes Cluster
+## Local PC Kubernetes Cluster
 ![DockerDesktop Screenshot](./screenshots/OperationalK38Proof.jpg)
-##Azure Portal Kubernetes Cluster
+## Azure Portal Kubernetes Cluster
 ![Azure Kubernetes Cluster Screenshot](./screenshots/evidenceAKS.jpg)
 
 --Working Evidence--
 
 ![Working AKS Screenshot](./screenshots/OperationalAzureProof.jpg)
 
-#NEXT STEPS
+# NEXT STEPS
 a. Move to https
 b. BICES Automation of infrastructure
