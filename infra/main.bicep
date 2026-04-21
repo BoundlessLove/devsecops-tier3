@@ -15,8 +15,9 @@ param nodeCount int = 2
   '1.29.0'
   '1.28.5'
   '1.27.9'
+  '1.35.0'
 ])
-param kubernetesVersion string = '1.29.0'
+param kubernetesVersion string = '1.35.0'
 
 resource acr 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' = {
   name: acrName
