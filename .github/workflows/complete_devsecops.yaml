@@ -2,7 +2,7 @@ name: Build, Deploy, Test, and Teardown AKS
 
 on:
   push:
-  workflow_dispatch:
+
 
 jobs:
   deploy:
@@ -130,22 +130,12 @@ jobs:
     - name: Run Concordion Acceptance Tests
       run: |
         cd acceptance-tests
-        mvn -q -DexternalIp=$EXTERNAL_IP test || true
+        gradlew -q -DexternalIp=$EXTERNAL_IP test || true
+       # local: gradlew clean test -DexternalIp=localhost
+
 
     - name: Upload Concordion Report
       uses: actions/upload-artifact@v4
       with:
         name: concordion-report
-        path: acceptance-tests/target/concordion
-
-    # -----------------------------
-    # 6. Teardown (Closure)
-    # -----------------------------
-    - name: Teardown Resource Group
-      if: always()
-      run: |
-        echo "Deleting resource group $RESOURCE_GROUP"
-        az group delete \
-          --name "$RESOURCE_GROUP" \
-          --yes \
-          --no-wait
+        path: acceptance-tests/build/reports/tests/test

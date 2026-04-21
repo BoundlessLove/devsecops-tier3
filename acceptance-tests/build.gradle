@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.concordion:concordion:4.0.1'
+    testImplementation 'org.apache.httpcomponents.client5:httpclient5-fluent:5.3'
+    //testImplementation 'org.concordion:concordion-extensions:4.0.1'
+}
+
+
+test {
+    useJUnitPlatform()
+    systemProperty "externalIp", System.getProperty("externalIp")
+}
