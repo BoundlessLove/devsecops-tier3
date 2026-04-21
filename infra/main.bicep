@@ -1,122 +1,70 @@
-name: Build, Deploy, Test, and Teardown AKS
+@description('Location for all resources')
+param location string = resourceGroup().location
 
-on:
-  push:
-  workflow_dispatch:
+@description('ACR name (must be globally unique, lowercase)')
+param acrName string = 'devsecopstier2acr'
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+@description('AKS cluster name')
+param aksName string = 'devsecopstier2aks'
 
-    permissions:
-      id-token: write
-      contents: read
+@description('Node count for AKS')
+param nodeCount int = 2
 
-    env:
-      ACR_NAME: ${{ secrets.AZURE_CONTAINER_REGISTRY }}
-      RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
-      AKS_NAME: ${{ secrets.CLUSTER_NAME }}
-      LOCATION: ${{ secrets.AZURE_LOCATION }} # e.g. eastus, australiaeast
-      IMAGE_NAME: aks-demo
-      IMAGE_TAG: latest
+@description('Kubernetes version (optional)')
+@allowed([
+  '1.29.0'
+  '1.28.5'
+  '1.27.9'
+])
+param kubernetesVersion string = '1.29.0'
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+resource acr 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' = {
+  name: acrName
+  location: location
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    adminUserEnabled: false
+  }
+}
 
-    - name: Azure Login (OIDC)
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
+  name: aksName
+  location: location
+  identity: {
+    type: 'SystemAssigned'
+  }
+  properties: {
+    kubernetesVersion: kubernetesVersion
+    dnsPrefix: '${aksName}-dns'
+    agentPoolProfiles: [
+      {
+        name: 'nodepool1'
+        count: nodeCount
+        vmSize: 'Standard_B2s'
+        osType: 'Linux'
+        type: 'VirtualMachineScaleSets'
+        mode: 'System'
+      }
+    ]
+    networkProfile: {
+      networkPlugin: 'azure'
+      loadBalancerSku: 'standard'
+    }
+  }
+}
 
-    # -----------------------------
-    # 0. Create/ensure Resource Group
-    # -----------------------------
-    - name: Ensure Resource Group exists
-      run: |
-        az group create \
-          --name "$RESOURCE_GROUP" \
-          --location "$LOCATION"
-
-    # -----------------------------
-    # 1. Deploy Infra via Bicep
-    # -----------------------------
-    - name: Deploy ACR + AKS via Bicep
-      run: |
-        az deployment group create \
-          --resource-group "$RESOURCE_GROUP" \
-          --name "aks-infra-deploy" \
-          --template-file infra/main.bicep \
-          --parameters acrName="$ACR_NAME" aksName="$AKS_NAME"
-
-    # -----------------------------
-    # 2. Build & Push Docker Image
-    # -----------------------------
-    - name: Build and Push Image to ACR
-      run: |
-        az acr login --name "$ACR_NAME"
-        IMAGE="$ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG"
-        docker build -t "$IMAGE" ./app
-        docker push "$IMAGE"
-
-    # -----------------------------
-    # 3. Connect to AKS
-    # -----------------------------
-    - name: Set AKS context
-      uses: azure/aks-set-context@v3
-      with:
-        resource-group: ${{ env.RESOURCE_GROUP }}
-        cluster-name: ${{ env.AKS_NAME }}
-
-    - name: Install Helm
-      uses: azure/setup-helm@v3
-
-    - name: Deploy with Helm
-      run: |
-        helm upgrade --install aks-demo ./helm/aks-demo \
-          --set image.repository=${ACR_NAME}.azurecr.io/aks-demo \
-          --set image.tag=${IMAGE_TAG}
-
-    # -----------------------------
-    # 4. Wait for External IP & Smoke Test
-    # -----------------------------
-    - name: Wait for deployment to be ready
-      run: |
-        kubectl rollout status deployment/aks-demo --timeout=300s
-
-    - name: Get Service External IP
-      id: get_ip
-      run: |
-        # Adjust service name/namespace if different
-        for i in {1..30}; do
-          IP=$(kubectl get svc aks-demo -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || true)
-          if [ -n "$IP" ]; then
-            echo "EXTERNAL_IP=$IP" >> $GITHUB_ENV
-            echo "External IP: $IP"
-            exit 0
-          fi
-          echo "Waiting for external IP..."
-          sleep 10
-        done
-        echo "Failed to get external IP"
-        exit 1
-
-    - name: Smoke test HTTP endpoint
-      run: |
-        echo "Testing http://$EXTERNAL_IP/"
-        # Adjust path to your API endpoint, e.g. /api/health
-        curl -f "http://$EXTERNAL_IP/" || exit 1
-
-    # -----------------------------
-    # 5. Teardown (Closure)
-    # -----------------------------
-    - name: Teardown Resource Group
-      if: always()
-      run: |
-        echo "Deleting resource group $RESOURCE_GROUP"
-        az group delete \
-          --name "$RESOURCE_GROUP" \
-          --yes \
-          --no-wait
+// Give AKS permission to pull from ACR
+resource acrAksRole 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(aks.id, acr.id, 'AcrPull')
+  scope: acr
+  properties: {
+    roleDefinitionId: subscriptionResourceId(
+      'Microsoft.Authorization/roleDefinitions',
+      '7f951dda-4ed3-4680-a7ca-43fe172d538d' // AcrPull
+    )
+    principalId: aks.identity.principalId
+    principalType: 'ServicePrincipal'
+  }
+} 
