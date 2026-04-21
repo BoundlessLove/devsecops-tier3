@@ -33,7 +33,7 @@ e. TEST DRIVEN DEVELOPMENT (TDD)
 
 This DEVSECOPS series is an attempt to demonstrate it live.
 
-# B. The CONTINUOUS INTEGRATION and TEST DRIVEN DEVELOPMENT Part of DEVSECOPS
+# B. The CONTINUOUS INTEGRATION and TEST DRIVEN DEVELOPMENT (Sarna, 2023) Part of DEVSECOPS
 See Releases section in README.MD of Repository BoundlessLove/DevSecOpsTier1 for details.
 
 # C. The CONTINUOUS DEPLOYMENT Part of DEVSECOPS
@@ -129,6 +129,7 @@ kubectl port-forward svc/aks-demo-service 8080:8080
 # J. REFERENCES
 
 1. United States (US) Government's Department of Defence (DOD).(2023). DOCS Mission - Guidelines for partners to maintain complaince. Source: https://public.cyber.mil/devsecops/. Last Accessed: 20 April 2026
+2. Sarna, J.(2023). Automation Used.Source: https://testdrivendevelopment.azurewebsites.net/detail2.html. 
 
 $${\color{red} © \space 2026 \space Jyotirmay \space Sarna. \space This \space work \space is \space original. \space Do \space not \space copy, \space repost, \space or \space use \space without \space permission. }$$
 
