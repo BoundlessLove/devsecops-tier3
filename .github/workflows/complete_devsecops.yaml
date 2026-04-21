@@ -1,4 +1,3 @@
-
 name: Build, Deploy, Test, and Teardown AKS
 
 on:
@@ -17,7 +16,7 @@ jobs:
       ACR_NAME: ${{ secrets.AZURE_CONTAINER_REGISTRY }}
       RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
       AKS_NAME: ${{ secrets.CLUSTER_NAME }}
-      LOCATION: ${{ secrets.AZURE_LOCATION }} # e.g. eastus, australiaeast
+      LOCATION: ${{ secrets.AZURE_LOCATION }}
       IMAGE_NAME: aks-demo
       IMAGE_TAG: latest
 
@@ -53,14 +52,12 @@ jobs:
           --parameters acrName="$ACR_NAME" aksName="$AKS_NAME"
 
     # Give AKS permission to pull from ACR
-    #-------------------------------------
     - name: Attach ACR to AKS
       run: |
         az aks update \
-        --resource-group "$RESOURCE_GROUP" \
-        --name "$AKS_NAME" \
-        --attach-acr "$ACR_NAME"
-
+          --resource-group "$RESOURCE_GROUP" \
+          --name "$AKS_NAME" \
+          --attach-acr "$ACR_NAME"
 
     # -----------------------------
     # 2. Build & Push Docker Image
@@ -105,7 +102,6 @@ jobs:
     - name: Get Service External IP
       id: get_ip
       run: |
-        # Adjust service name/namespace if different
         for i in {1..30}; do
           IP=$(kubectl get svc aks-demo -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || true)
           if [ -n "$IP" ]; then
@@ -122,28 +118,25 @@ jobs:
     # -----------------------------
     # 5. Smoke Test
     # -----------------------------
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
 
+    - name: Install Maven
+      run: sudo apt-get update && sudo apt-get install -y maven
 
-     - name: Set up Java
-       uses: actions/setup-java@v4
-       with:
-         distribution: 'temurin'
-         java-version: '17'
+    - name: Run Concordion Acceptance Tests
+      run: |
+        cd acceptance-tests
+        mvn -q -DexternalIp=$EXTERNAL_IP test || true
 
-     - name: Install Maven
-       run: sudo apt-get update && sudo apt-get install -y maven
-
-     - name: Run Concordion Acceptance Tests
-       run: |
-         cd acceptance-tests
-         mvn -q -DexternalIp=$EXTERNAL_IP test || true
-
-     - name: Upload Concordion Report
-       uses: actions/upload-artifact@v4
-       with:
-         name: concordion-report
-         path: acceptance-tests/target/concordion
-
+    - name: Upload Concordion Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: concordion-report
+        path: acceptance-tests/target/concordion
 
     # -----------------------------
     # 6. Teardown (Closure)
@@ -156,5 +149,3 @@ jobs:
           --name "$RESOURCE_GROUP" \
           --yes \
           --no-wait
-
-
