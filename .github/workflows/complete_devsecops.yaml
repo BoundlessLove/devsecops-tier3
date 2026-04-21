@@ -139,3 +139,15 @@ jobs:
       with:
         name: concordion-report
         path: acceptance-tests/build/reports/tests/test
+
+		# -----------------------------
+		# 6. Teardown (Closure)
+		# -----------------------------
+    - name: Teardown Resource Group
+      if: always()
+      run: |
+        echo "Deleting resource group $RESOURCE_GROUP"
+        az group delete \
+          --name "$RESOURCE_GROUP" \
+          --yes \
+          --no-wait
