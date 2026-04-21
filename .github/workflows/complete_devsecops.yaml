@@ -52,6 +52,8 @@ jobs:
           --template-file infra/main.bicep \
           --parameters acrName="$ACR_NAME" aksName="$AKS_NAME"
 
+    # Give AKS permission to pull from ACR
+    #-------------------------------------
     - name: Attach ACR to AKS
       run: |
         az aks update \
@@ -94,7 +96,7 @@ jobs:
         kubectl describe pods
 
     # -----------------------------
-    # 4. Wait for External IP & Smoke Test
+    # 4. Wait for External IP 
     # -----------------------------
     - name: Wait for deployment to be ready
       run: |
@@ -117,14 +119,34 @@ jobs:
         echo "Failed to get external IP"
         exit 1
 
-    - name: Smoke test HTTP endpoint
-      run: |
-        echo "Testing http://$EXTERNAL_IP/"
-        # Adjust path to your API endpoint, e.g. /api/health
-        curl -f "http://$EXTERNAL_IP/" || exit 1
+    # -----------------------------
+    # 5. Smoke Test
+    # -----------------------------
+
+
+     - name: Set up Java
+       uses: actions/setup-java@v4
+       with:
+         distribution: 'temurin'
+         java-version: '17'
+
+     - name: Install Maven
+       run: sudo apt-get update && sudo apt-get install -y maven
+
+     - name: Run Concordion Acceptance Tests
+       run: |
+         cd acceptance-tests
+         mvn -q -DexternalIp=$EXTERNAL_IP test || true
+
+     - name: Upload Concordion Report
+       uses: actions/upload-artifact@v4
+       with:
+         name: concordion-report
+         path: acceptance-tests/target/concordion
+
 
     # -----------------------------
-    # 5. Teardown (Closure)
+    # 6. Teardown (Closure)
     # -----------------------------
     - name: Teardown Resource Group
       if: always()
