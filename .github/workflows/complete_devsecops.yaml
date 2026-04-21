@@ -140,9 +140,9 @@ jobs:
         name: concordion-report
         path: acceptance-tests/build/reports/tests/test
 
-		# -----------------------------
-		# 6. Teardown (Closure)
-		# -----------------------------
+        # -----------------------------
+        # 6. Teardown (Closure)
+        # -----------------------------
     - name: Teardown Resource Group
       if: always()
       run: |
