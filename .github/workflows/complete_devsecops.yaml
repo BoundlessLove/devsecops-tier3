@@ -80,6 +80,11 @@ jobs:
           --set image.repository=${ACR_NAME}.azurecr.io/aks-demo \
           --set image.tag=${IMAGE_TAG}
 
+    - name: Debug pods
+      run: |
+        kubectl get pods -o wide
+        kubectl describe pods
+
     # -----------------------------
     # 4. Wait for External IP & Smoke Test
     # -----------------------------
