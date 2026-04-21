@@ -52,6 +52,14 @@ jobs:
           --template-file infra/main.bicep \
           --parameters acrName="$ACR_NAME" aksName="$AKS_NAME"
 
+    - name: Attach ACR to AKS
+      run: |
+        az aks update \
+        --resource-group "$RESOURCE_GROUP" \
+        --name "$AKS_NAME" \
+        --attach-acr "$ACR_NAME"
+
+
     # -----------------------------
     # 2. Build & Push Docker Image
     # -----------------------------
