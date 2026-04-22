@@ -37,42 +37,62 @@ It facilitates code that is maintainable and reliable, even in a cross functiona
 
 ## 4.0 INTRODUCTION
 When I introduce myself as a Software Engineer, surprised often people ask, how is programming/coding an engineering field? Is engineering not about building bridges and skyscrapers?
+
 My answer is yes, it is. Today, tell me what does not use software. Software when made under certain guidelines/discipline comes under the banner of software engineering. Two such disciplines are:
+
 - Devsecops, and
-- Test driven development (TDD). 
+- Test driven development (TDD).
+ 
 Devsecops is means to develop code, which enables rapid deployment to production as it in theory has the capability to reduce the time for quality control via automating it. In the past software developers always did have unit tests in their code for basic health checks. However, Devsecops takes this concept to the next level as it attempts to automate frontline testing too e.g. end to end system tests, the domain of the IT Quality Assurance profession.
+
 Further, in the construct of Devsecops, Test Driven Development (TDD) is the idea that all code is written to satisfy tests. So, the development process would involve identifying stories, which would distil into requirements, which in turn would lead to automated tests and then code would be written to satisfy those tests:
+
 - Stories > requirements > automated tests > code written to satisfy tests
+
  If changes in the form of new design vectors or business requirements appear, rapid re-factoring would realign the development effort. I first came across TDD at my Software Engineering degree at the University of Auckland in the early 2000s, as part of learning Xtreme programming, which can be slated as a somewhat precursor to DevSecOps.    
+
 Following such 'Best practices' builds code that is holistic for the people who create it, the people who consume it and the people who support it, as the underlying paradigms and principles follow 'high maturity' constructs, building 'love and care' vectors like maintainability and reliability into the product - good for the body, mind and soul (His Holiness Radhanath Swami, 2025, December, 15, 2:00-3:00).
 
 ## 5.0 MOTIVATION
  Goebbels, the propaganda minister of NAZI Germany during WWII famously said along the lines of that if a lie is repeated often enough, the standard human psyche starts accepting it as ‘true’. In modern lingo, we call it disinformation. In the era of chaos caused by over hype of capabilities of Artificial Intelligence (AI), people struggle to see that AI is the new wild west frontier (Bogan, 2026, Pg. 55), i.e. needs to be treated with caution, and yet it is important to discern that our future is in the correct use of AI (His Holiness Radhanath Swami, 2025, December, 15, 5:00-7:00). The overwhelming propaganda for AI today is coming from adverts being pumped at us in Social Media by those with the clout and intent to keep us confused. This kind of disinformation is also the theme of the recent winner of the "Best Animated Feature" at Academy awards - "K-Pop Demon Hunters" (Rashid, 2026, March, 16). To keep my narrative positive, in the Spirit of Non-violence, I see it as a test from Providence, which only the discerning will pass (BBC News, 2026, April, 4).
 If AI is seen for what it is, a tool, then:
+
 - the lessons about sustainable software engineering practice from my university golden days remain valid today.  
+
 I seek to refocus the world to what is important – the fundamentals of Software Engineering practice. Hence this blog post is about fundamentals of DevSecOps practice, as I experienced it.
 
 ## 6.0 FUNDAMENTALS OF DEVSECOPS
 I demonstrate this via two GitHub ACTIONS projects. The first one incorporates a simple node.js micro server and a simple REACT client consuming that microservice’s API endpoints. What makes it special is that all the code was produced in the spirit of Test Driven Development. Further, as per CONTINOUS INTEGRATION (CI) paradigm of DEVSECOPS, any updates to the code trigger a CI pipeline that runs those tests, providing instant feedback about:
+
 - Is code quality up to the mark for deployment to production.
 Lastly, in 2026, any code outside the cloud automatically gets the label of legacy, and hence the dev branch of the repository integrates this DEVSECOPS model code to Azure Cloud. The server has an endpoint that requires an API KEY to access it. The code hence:
+
 - retrieves APIKEY at runtime from Key vault in Azure Cloud as part of continuous integration, and uses it to run tests
 Please see GITHUB repo for details:
+
 - https://github.com/BoundlessLove/devsecops-tier1/tree/dev
+
 Further, DEVSECOPS also includes the CONTINOUS DEPLOYMENT (CD) Paradigm, i.e. any updates to the code, are at once tested under CI and then deployed to STAGING for User Acceptance Testing. CONTINUOUS SECURITY and CONTINUOUS OPERATIONS are the other aspects of DEVSECOPS. Please find a practical demonstration of these three operate via a node.js server on Azure Kubernetes cloud in a GITHUB CICD pipeline: 
+
 - https://github.com/BoundlessLove/devsecops-tier3/
 
 ## 7.0 CONCLUSION
 This post presents the concept and code behind the motivation that a software engineering project starting with its fundamentals aligned to best software engineering practices is more likely to succeed in the long run. Justification is found in idiom:
+
 - "A stitch in time, saves nine"- Thomas Fuller (1732 from book 'Gnomologia: Adagies and Proverbs'),
 
  ## 8.0 ACKNOWLEDGEMENTS
 I am from the IT Quality Assurance Engineering profession, a discipline I have been a part of since 2007. In 2021, a new QA standard was introduced IEEE 29119 Part 6- Software testing on Agile Projects. It made the unusual step of providing a guideline that quality assurance professionals will no longer create bugs/defects – refer to section 4.2.26 Informal Defect Management (ISO/IEC/IEEE, 2021, Pg.12-13). This shook my professional beliefs and practices to the core and I am still recovering. The impact is multifaceted and profound. There are many layers of truth in this standard, however, people tend to take shortcuts and in the chaos of conversations, often the voice of reason gets drowned out. To me the standard emphasises the urgent need to apply test automation in QA practice, but it is not a license to do away with essential documentation, where the ‘essential’ is defined in a Test Policy (formalised by QA subject matter expert/s only)- refer to section ‘4.2.17 Eliminate Waste’ of standard (ISO/IEC/IEEE, 2021, Pg. 10). 
+
 Getting bogged down with negotiating an ever losing battle on this front, instead I redirected my ‘chi’, in the spirit of transforming my struggles into strength. I began on a journey of rediscovering the joy of being a programmer by upskilling and investing in what forged me in this career all those years ago at university- Software Engineering (His Holiness Radhanath Swami, 2019, Aug, 9). 
+
     Lastly, I thank my family who have put up with my Trademe Sam Morgan type ‘stay at home’ vagrancy, with infinite patience (O'Donnell, 2010). 
+
 ## 9.0 INSPIRATION
 My late paternal grand mother/aunt Sanatana Dharma Nun Her Holiness Kumari Raj Sarna, who asked us to live by higher principles - Engineering Ethics (IEEE, 2026) and Ancestral guidance from scriptures such as the Holy MAHĀBHĀRATA VANA PARVA CHAPTER 313 VERSE 128  (Ram/राम , 2024, Pg. 993), source of her OATH book. 
-Jay Sarna
+
+Jay Sarna, BE (Software), CEH
+
 https://www.blog.systematicdefence.tech
 https://testdrivendevelopment.azurewebsites.net/cicd.html
 
