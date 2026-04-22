@@ -126,27 +126,44 @@ b. https://testdrivendevelopment.azurewebsites.net/cicd.html
 
 &nbsp;&nbsp;&nbsp;&nbsp;Hence, it is adherence to righteous knowledge and character, which is the 100% guarantee to stay on the correct path, based on "time, place and circumstances".
 
-## 11.0 REFERENCES
+## 11.0 REFERENCES (Note: Some urls are incomplete)
 1. Bogan, C.(2026).Very Brief History of Synthetic Media. Behind the AI MASK- Protecting your business from deepfakes. Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
-2. His Holiness Radhanath Swami.(2025, Dec, 15).YouTube- Technology for the Soul | Radhanath Swami | Massachusetts Institute of Technology. https://www.youtube.com/watch?v=UiL8zUp54ow&list=LL.... Last  Accessed 26 March 2026.
-3. His Holiness Radhanath Swami.(2019, Aug, 9). YouTube- Transforming Our Struggles Into Strength | His Holiness Radhanath Swami. https://www.youtube.com/watch?v=abmsniEmfh0. Last  Accessed 26 March 2026.
-4. International Organization for Standardization (ISO)/ International Electrotechnical Commission (IEC)/ Institute of Electrical and Electrical Engineers (IEEE). (2021). ISO/IEC/IEEE 29119 6:2021(E): Software and systems engineering — Software testing — Part 6:  (all parts) in agile life cycles. Published by ISO.
-5. O'Donnell, M. (2010). Trade Me: The inside story. Phantom House Books
-6. Mendez II, M.(2025, Jul, 19).  Yahoo! news- out- Barack Obama explains why he thinks all men need queer people in their lives. https://www.yahoo.com/.../barack-obama-explains-why.... Last Accessed 05 April 2026.
-7. Obama, B. (2009, April, 06). United States Government- The White House President Barrack Obama- Remarks by the President at Cairo University, 6-04-09- REMARKS BY THE PRESIDENT
-ON A NEW BEGINNING. https://obamawhitehouse.archives.gov/.../remarks.... Last Accessed 05 April 2026.
-8. Robertson, J. N., Jones, P. W. (2022). New Zealand Film Commission | Te Tumu Whakaata Taonga -Whina. https://www.nzfilm.co.nz/films/whina. Last accessed 02 February 2026.
-9. Hemi-Morehouse, S., Hill, D.(2025, August, 12). Mother of the Nation: Whina Cooper- Whina Cooper and the Long Walk for Justice. Published by Penguin Books.
-10. Hemi-Morehouse, S., Hill, D.(2025, August, 12). Te Whaea o te Motu- Whina Cooper me te Hīkoi roa mō te Manatika. Translated into te reo Māori by Morrison, S. Published by Penguin Books.
+   
+3. His Holiness Radhanath Swami.(2025, Dec, 15).YouTube- Technology for the Soul | Radhanath Swami | Massachusetts Institute of Technology. https://www.youtube.com/watch?v=UiL8zUp54ow&list=LL.... Last  Accessed 26 March 2026.
+   
+5. His Holiness Radhanath Swami.(2019, Aug, 9). YouTube- Transforming Our Struggles Into Strength | His Holiness Radhanath Swami. https://www.youtube.com/watch?v=abmsniEmfh0. Last  Accessed 26 March 2026.
+   
+7. International Organization for Standardization (ISO)/ International Electrotechnical Commission (IEC)/ Institute of Electrical and Electrical Engineers (IEEE). (2021). ISO/IEC/IEEE 29119 6:2021(E): Software and systems engineering — Software testing — Part 6:  (all parts) in agile life cycles. Published by ISO.
+   
+9. O'Donnell, M. (2010). Trade Me: The inside story. Phantom House Books
+    
+11. Mendez II, M.(2025, Jul, 19).  Yahoo! news- out- Barack Obama explains why he thinks all men need queer people in their lives. https://www.yahoo.com/.../barack-obama-explains-why.... Last Accessed 05 April 2026.
+12. 
+13. Obama, B. (2009, April, 06). United States Government- The White House President Barrack Obama- Remarks by the President at Cairo University, 6-04-09- REMARKS BY THE PRESIDENT ON A NEW BEGINNING. https://obamawhitehouse.archives.gov/.../remarks.... Last Accessed 05 April 2026.
+    
+15. Robertson, J. N., Jones, P. W. (2022). New Zealand Film Commission | Te Tumu Whakaata Taonga -Whina. https://www.nzfilm.co.nz/films/whina. Last accessed 02 February 2026.
+    
+17. Hemi-Morehouse, S., Hill, D.(2025, August, 12). Mother of the Nation: Whina Cooper- Whina Cooper and the Long Walk for Justice. Published by Penguin Books.
+    
+19. Hemi-Morehouse, S., Hill, D.(2025, August, 12). Te Whaea o te Motu- Whina Cooper me te Hīkoi roa mō te Manatika. Translated into te reo Māori by Morrison, S. Published by Penguin Books.
+    
 11.0 BBC News.(2026, April, 4). AI Decoded - Episode 10: Are humans useless in the AI workspace?. https://www.bbc.co.uk/programmes/m002bc0j
+
 12.0 Rashid, R.(2026, March, 16). The Guardian- Oscars 2026- South Korea celebrates ‘miracle’ Oscar wins for KPop Demon Hunters. https://www.theguardian.com/.../kpop-demon-hunters-oscar...
+
 13.0 Ansari, A. (1978). Kwaja Abdullah Ansari: The Invocations (Munajat) (W. M. Thackston, Trans.). Paulist Press. (Original work published c. 1088).
+
 14.0 Okoth-Obbo, V. (2020, August, 2). United Nations Development Programme (UNDP)- Home > Iraq > Stories > Six Years After Sinjar Massacre, Support and Services are Vital for Returning Yazidis. https://www.undp.org/.../six-years-after-sinjar-massacre.... Last Accessed: 05 April 2026
+
 15.0 IEEE- Advancing Technology for Humanity. (2026). IEEE Code of Ethics. https://www.ieee.org/about/corporate/governance/p7-8. Last accessed 02 February 2026
 16.0  [Hindi Mahabharata] साहित्याचार्य पंडित रामनारायण दत्त शास्त्री पांडेय 'राम'.(2024). अध्याय 313 - यक्ष और युधिष्ठिर का प्रश्नोत्तर और युधिष्ठिर के उत्तर से संतुष्ट हुए यक्ष का चरणों भाइयों को जीवित होने का वरदान देना. श्रीमन महर्षि वेदव्यास प्रणीत महाभारत (द्वितीय खंड) - वनपर्व और विराटपर्व, सचित्र, सरल हिन्दी-अनुवादसहित. प्रकाशक एवं बुद्रक- गीता प्रेस गोरखपुर, गोबिंदभवन-कार्यालय, कोलकाता का संस्थानान Code 33. मूल सच्ची कहानी 3102 ईसा पूर्व में प्रकाशित हुई (द्रिकपंचांग के अनुसार) 
+
 17.0 Plato.(360 B.C.E). Book III. Massachusetts Institute of Technology Classics- The Republic. Translated by Jowett, B. https://classics.mit.edu/Plato/republic.4.iii.html . Last Accessed 9 April 2026
+
 18.0 Plato.(360 B.C.E). Book V. Massachusetts Institute of Technology Classics- The Republic. Translated by Jowett, B. https://classics.mit.edu/Plato/republic.6.v.html . Last Accessed 9 April 2026
+
 19.0 vedictreasure.official.(2025, April, 12). Instagram- Tabla master ustad Zakir Hussain speaks of his faith being devout muslim but worships bhagwan Ganesh and goddess Saraswati...Source: https://www.instagram.com/reel/DIWEwKzhKRv/. Last Accessed: 17 April 2026 
+
 20.0 INSIDE GOVERNMENT. (2026, April, 09). Home> Education- Education Health- Poverty pushes up dementia rates, says Auckland academic. Source: https://insidegovernment.co.nz/poverty-pushes-up.../. Last Accessed: 17 April 2026
 
 ## 12.0 DISCLAIMER--
