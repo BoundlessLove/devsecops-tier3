@@ -6,7 +6,9 @@
 ## 1.0 SUMMARY
 
 Good software development practice involves automation and focused efforts, something that can be sewn around a ‘common/shared understanding’, an understanding which a team can trust and take pride in. The mana and clarity of this understanding can then make the paradigm “there is no ‘I’ in a team” practical. Yes, nowadays AI has a lot of promise, however common sense is that it is a means to an end. Software Development Utopia, still remains in following 'Good Software engineering practice' via:
+
 - a balanced DevSecOps pipeline, according to time, place and circumstances (see Annex A for how the latter principle applies conceptually)
+
 It facilitates code that is maintainable and reliable, even in a cross functional ‘team of teams’ context, where anyone can be asked to pick it up and support it. To this end, this post demonstrates a ‘Proof of Concept’/framework/template, a simple REACT front end client app consuming a node.js server backend microservice, setup with continuous integration using a pipeline in Github Actions, that integrates with Azure Cloud at runtime to retrieve secrets from Key vault. This is a good starting point for a project, so it starts out with the correct building blocks. 
 
 ## 2.0 CHANGE LOG
