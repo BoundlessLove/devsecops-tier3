@@ -169,4 +169,5 @@ b. https://testdrivendevelopment.azurewebsites.net/cicd.html
 ## 12.0 DISCLAIMER--
 This post is written in good faith, please forgive mistakes. Also see my facebook blog - https://www.facebook.com/story.php?story_fbid=122176707806768040&id=61573041203371&http_ref=eyJ0cyI6MTc3NjgxNzk2MjAwMCwiciI6IiJ9
 
-© 2026 Jyotirmay Sarna. This post is original. Do not copy, repost, or use without permission
+$${\color{red} © \space 2026 \space Jyotirmay \space Sarna. \space This \space work \space is \space original. \space Do \space not \space copy, \space repost, \space or \space use \space without \space permission. }$$
+
