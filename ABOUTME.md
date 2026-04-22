@@ -70,6 +70,7 @@ I demonstrate this via two GitHub ACTIONS projects. The first one incorporates a
 Lastly, in 2026, any code outside the cloud automatically gets the label of legacy, and hence the dev branch of the repository integrates this DEVSECOPS model code to Azure Cloud. The server has an endpoint that requires an API KEY to access it. The code hence:
 
 - retrieves APIKEY at runtime from Key vault in Azure Cloud as part of continuous integration, and uses it to run tests
+
 Please see GITHUB repo for details:
 
 - https://github.com/BoundlessLove/devsecops-tier1/tree/dev
