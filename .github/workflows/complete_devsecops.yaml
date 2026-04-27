@@ -138,7 +138,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: concordion-report
-        path: acceptance-tests/build/reports/tests/test
+        path: acceptance-tests/build/reports/
 
         # -----------------------------
         # 6. Teardown (Closure)
