@@ -32,9 +32,11 @@ public class CheckPageTextTest {
     }
 
     public String getTestUrl() {
-	    String ip = System.getProperty("externalIp");
-        return (ip != null && !ip.isBlank())
-	                ? "http://" + ip + "/"
-	                : "no url provided";
+        String ip = System.getProperty("externalIp");
+
+        if (ip == null || ip.isBlank()) {
+            throw new IllegalArgumentException("externalIp system property is missing");
+        }
+
+        return "http://" + ip + "/";
     }
-}
