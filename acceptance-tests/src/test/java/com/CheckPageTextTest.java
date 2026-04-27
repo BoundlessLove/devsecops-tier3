@@ -40,3 +40,4 @@ public class CheckPageTextTest {
 
         return "http://" + ip + "/";
     }
+}
