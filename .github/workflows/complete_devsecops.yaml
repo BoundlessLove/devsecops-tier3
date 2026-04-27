@@ -130,6 +130,7 @@ jobs:
     - name: Run Concordion Acceptance Tests
       run: |
         cd acceptance-tests
+        chmod +x gradlew
         ./gradlew -q -DexternalIp=$EXTERNAL_IP test || true
        # local: gradlew clean test -DexternalIp=localhost
 
