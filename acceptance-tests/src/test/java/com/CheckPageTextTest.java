@@ -30,7 +30,7 @@ public class CheckPageTextTest {
         reader.close();
         return sb.toString().contains(text);
     }
-
+    
     public String getTestUrl() {
         String ip = System.getProperty("externalIp");
 

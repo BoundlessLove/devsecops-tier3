@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.CheckPageTextTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-27T15:45:55.457Z" hostname="ASHWRENUJNITIKA" time="1.28">
+<testsuite name="com.CheckPageTextTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-04-27T20:01:30.445Z" hostname="ASHWRENUJNITIKA" time="0.009">
   <properties/>
-  <testcase name="[Concordion Specification for 'CheckPageText']" classname="com.CheckPageTextTest" time="1.249"/>
-  <system-out><![CDATA[
-file://C:\Users\moose\git\devsecops-tier3\acceptance-tests\build\reports\spec\com\CheckPageText.html
-Successes: 1, Failures: 0
-]]></system-out>
+  <testcase name="initializationError" classname="com.CheckPageTextTest" time="0.006">
+    <failure message="org.concordion.internal.ParsingException: Failed to parse XML document [classpath: /com/CheckPageText.html]" type="org.concordion.internal.ParsingException">org.concordion.internal.ParsingException: Failed to parse XML document [classpath: /com/CheckPageText.html]
+	at org.concordion.internal.XMLParser.parse(XMLParser.java:25)
+	at org.concordion.internal.XMLSpecificationReader.readSpecification(XMLSpecificationReader.java:31)
+	at org.concordion.Concordion.loadSpecificationFromResource(Concordion.java:104)
+	at org.concordion.Concordion.getSpecification(Concordion.java:71)
+	at org.concordion.Concordion.hasExampleCommands(Concordion.java:86)
+	at org.concordion.Concordion.checkValidStatus(Concordion.java:120)
+	at org.concordion.integration.junit4.ConcordionRunner.&lt;init&gt;(ConcordionRunner.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+Caused by: nu.xom.ParsingException: The prefix &quot;concordion&quot; for attribute &quot;concordion:set&quot; associated with an element type &quot;span&quot; is not bound. at line 3, column 33
+	at nu.xom.Builder.build(Unknown Source)
+	at nu.xom.Builder.build(Unknown Source)
+	at org.concordion.internal.XMLParser.parse(XMLParser.java:21)
+	... 17 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 3; columnNumber: 33; The prefix &quot;concordion&quot; for attribute &quot;concordion:set&quot; associated with an element type &quot;span&quot; is not bound.
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1251)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	... 20 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

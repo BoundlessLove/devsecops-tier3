@@ -1,18 +1,10 @@
-<html xmlns:concordion="http://www.concordion.org/2007/concordion">
-<body>
-
-<h1>Check that URL contains a specific phrase - Hello from aks-demo running on k3d!."</h1>
-
-
 <p>
-    TEST 1: We expect that URL call 
-    <span concordion:set="#url">getTestUrl()</span> will return content containing the phrase "
-    <span concordion:set="#text">Hello from aks-demo running on k3d!</span>".
+    TEST 1: We expect that calling the URL 
+    <span concordion:set="#url">getTestUrl()</span>
+    will return content containing a phrase 
+    <span concordion:set="#text">Google offered in:</span>.
 </p>
 
 <p concordion:assertTrue="urlContainsText(#url, #text)">
-    <i>The page contains the phrase.</i>
+    <i>The page contains the phrase "Google offered in:".</i>
 </p>
-
-</body>
-</html>
