@@ -1,0 +1,2 @@
+$${\color{red} © \space 2026 \space Jyotirmay \space Sarna. \space This \space work \space is \space original. \space Do \space not \space copy, \space repost, \space or \space use \space without \space permission. }$$
+$${© 2026 Jyotirmay Sarna. This work is original. Do not copy, repost, or use without permission.
