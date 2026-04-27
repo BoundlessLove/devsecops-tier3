@@ -12,11 +12,12 @@ This project is part 3/3 of  DEVSECOPS demostration series. The first part is in
 #### C. The CONTINUOUS DEPLOYMENT Part of DEVSECOPS
 #### D. The Security Part of DEVSECOPS
 #### E. The Operations Part of DEVSECOPS
-#### F. KNOWN ISSUE
-#### G. NEXT STEPS
-#### H. CONCLUSION
-#### I. RELEASES
-#### J. REFERENCES
+#### F. The Integration Part of DEVSECOPS
+#### G. KNOWN ISSUE
+#### H. NEXT STEPS
+#### I. CONCLUSION
+#### J. RELEASES
+#### K. REFERENCES
 
 # A. BACKGROUD
 IDEAL DEVSECOPS contains five components:
@@ -70,21 +71,25 @@ At the moment the Operations part of DEVSECOPs is being managed manually via one
 
 4. Ensure the variables above are in Github Secrets
 
-# F. KNOWN ISSUE
+# E. The Operations Part of DEVSECOPS
 
-In future this will be automated using BICEP. See Next Steps. In early hours of 20 April 2026, the above manual setup in Azure was deleted and any associated resources that Azure Kubernetes auto setup such as Kubernetes application Public IP address. Impact is that all future commits will fail the workflow - 'Build and Deploy to  AKS'.   
+Concordian based Specification Acceptance tests and unit tests will be implemented in a future version. 
 
-# G. NEXT STEPS
+# G. KNOWN ISSUE
+
+In future this will be automated using BICEP. See Next Steps. In early hours of 20 April 2026, the above manual setup in Azure was deleted and any associated resources that Azure Kubernetes auto setup such as Kubernetes application Public IP address. Impact is that all future commits will fail the workflow - 'Build and Deploy to  AKS'.    
+
+# H. NEXT STEPS
 
 a. Move endpoints to https
 
 b. BICES Automation of infrastructure
 
 
-# H. CONCLUSION
+# I. CONCLUSION
 The REPOSITORIES BoundlessLove/DevSecOpsTier1, BoundlessLove/DevSecOpsTier2 and BoundlessLove/DevSecOpsTier3 is an attempt to provide a birds eye view of how DEVSECOPS's five essential paradigms CI, CD, CS, CO and TDD all work, via practical demostration and screenshots, where possible.
 
-# I. RELEASES
+# J. RELEASES
 
 ## Version 0.1
 19 April 2026 17:00 - Working locally on Docker desktop with:
