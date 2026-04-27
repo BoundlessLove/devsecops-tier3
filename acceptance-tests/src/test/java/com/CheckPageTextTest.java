@@ -33,13 +33,8 @@ public class CheckPageTextTest {
 
     public String getTestUrl() {
 	    String ip = System.getProperty("externalIp");
-
-	    public String getTestUrl() {
-	        String ip = System.getProperty("externalIp");
-	        return (ip != null && !ip.isBlank())
+        return (ip != null && !ip.isBlank())
 	                ? "http://" + ip + "/"
 	                : "no url provided";
-	    }
-
     }
 }
