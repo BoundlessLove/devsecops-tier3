@@ -7,17 +7,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class EndpointTest {
 
-    @Test
-    void callEndpoint() throws Exception {
-        String ip = System.getProperty("externalIp");
-        String response = Request.get("http://" + ip + "/")
-                .execute()
-                .returnContent()
-                .asString();
+	@Test
+	void callEndpoint() throws Exception {
+	    String ip = System.getProperty("externalIp");
 
-        //assertTrue(response.contains("Hello"), "Endpoint did not return expected content");
-        assertTrue(!response.trim().isEmpty(), "Endpoint returned an empty response");
-    }
+	    assertTrue(ip != null && !ip.isBlank(), "externalIp system property is missing");
+
+	    String response = Request.get("http://" + ip + "/")
+	            .execute()
+	            .returnContent()
+	            .asString();
+
+	    assertTrue(!response.trim().isEmpty(), "Endpoint returned an empty response");
+	}
+
     
     public boolean isNonEmpty(String s) {
         return s != null && !s.trim().isEmpty();

@@ -11,10 +11,18 @@ dependencies {
     testImplementation 'org.concordion:concordion:4.0.1'
     testImplementation 'org.apache.httpcomponents.client5:httpclient5-fluent:5.3'
     //testImplementation 'org.concordion:concordion-extensions:4.0.1'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0'
+
 }
 
 
 test {
-    useJUnitPlatform()
-    systemProperty "externalIp", System.getProperty("externalIp")
+    useJUnitPlatform()   // Enables JUnit 5
+    systemProperties['concordion.output.dir'] = "$buildDir/reports/spec"
+    testLogging.showStandardStreams = true
+
+    // Pass externalIp from command line or environment
+    if (System.getProperty("externalIp") != null) {
+        systemProperty "externalIp", System.getProperty("externalIp")
+    }
 }
