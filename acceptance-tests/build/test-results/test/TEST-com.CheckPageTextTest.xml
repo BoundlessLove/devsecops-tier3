@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.CheckPageTextTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-27T10:31:23.840Z" hostname="ASHWRENUJNITIKA" time="0.926">
+<testsuite name="com.CheckPageTextTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-27T15:45:55.457Z" hostname="ASHWRENUJNITIKA" time="1.28">
   <properties/>
-  <testcase name="[Concordion Specification for 'CheckPageText']" classname="com.CheckPageTextTest" time="0.916"/>
+  <testcase name="[Concordion Specification for 'CheckPageText']" classname="com.CheckPageTextTest" time="1.249"/>
   <system-out><![CDATA[
 file://C:\Users\moose\git\devsecops-tier3\acceptance-tests\build\reports\spec\com\CheckPageText.html
 Successes: 1, Failures: 0

@@ -30,4 +30,14 @@ public class CheckPageTextTest {
         reader.close();
         return sb.toString().contains(text);
     }
+    
+    public String getTestUrl() {
+	    String ip = System.getProperty("externalIp");
+
+	    if (ip != null && !ip.isBlank());
+	    	return "http://" + ip + "/";
+	    else
+	    	return "no url provided";
+
+    }
 }
